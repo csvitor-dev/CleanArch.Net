@@ -12,14 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.10"/>
-        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10"/>
-        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.10"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.10"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10"/>
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\CleanArch.Net.Infrastructure.Data\CleanArch.Net.Infrastructure.Data.csproj" />
       <ProjectReference Include="..\CleanArch.Net.Infrastructure.IoC\CleanArch.Net.Infrastructure.IoC.csproj" />
     </ItemGroup>
