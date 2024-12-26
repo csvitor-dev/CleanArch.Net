@@ -3,9 +3,8 @@ using CleanArch.Net.Infrastructure.Data.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("db") ??
-                       throw new InvalidOperationException("Connection string 'db' not found.");
-builder.Services.AddInfrastructure(connectionString);
+builder.Services.AddInfrastructure(InfraConfiguration.ConnectionString);
+await builder.Services.ApplyMigrations();
 
 builder.Services.AddControllersWithViews();
 
