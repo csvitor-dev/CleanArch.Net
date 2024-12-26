@@ -16,4 +16,19 @@ public static class InfraDataExtensionDi
         self.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
     }
+
+    public static async Task ApplyMigrations(this IServiceCollection self)
+    {
+        using var scope = self.BuildServiceProvider().CreateScope();
+        var provider = scope.ServiceProvider;
+
+        try
+        {
+            await provider.GetService<ApplicationDbContext>()?.Database.MigrateAsync()!;
+        }
+        catch (Exception ex)
+        {
+            await Console.Error.WriteLineAsync($"Failed to migrate database.\n[{ex.Message}]");
+        }
+    }
 }
