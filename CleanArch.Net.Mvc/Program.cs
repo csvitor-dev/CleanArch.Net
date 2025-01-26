@@ -1,4 +1,4 @@
-using CleanArch.Net.Infrastructure.Data.Extensions;
+using CleanArch.Net.Infrastructure.Data;
 using CleanArch.Net.Infrastructure.IoC.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);

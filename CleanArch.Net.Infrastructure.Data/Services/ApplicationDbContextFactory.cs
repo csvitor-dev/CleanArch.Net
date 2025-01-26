@@ -1,5 +1,4 @@
 using CleanArch.Net.Infrastructure.Data.Contexts;
-using CleanArch.Net.Infrastructure.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
