@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArch.Net.Infrastructure.Data.Extensions;
+namespace CleanArch.Net.Infrastructure.IoC.DependencyInjection;
 
-public static class InfraDataExtensionDi
+public static class InfraDataDi
 {
     public static void AddInfrastructure(this IServiceCollection self, string connection)
     {
