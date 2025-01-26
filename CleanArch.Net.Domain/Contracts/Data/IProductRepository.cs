@@ -4,5 +4,5 @@ namespace CleanArch.Net.Domain.Contracts.Data;
 
 public interface IProductRepository
 {
-    public IEnumerable<Product> GetProducts();
+    public Task<IEnumerable<Product>> GetProductsAsync();
 }
