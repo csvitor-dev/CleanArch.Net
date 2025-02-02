@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddInfrastructure(InfraConfiguration.ConnectionString);
+builder.Services.AddUseCases();
 await builder.Services.ApplyMigrations();
 
 builder.Services.AddControllersWithViews();

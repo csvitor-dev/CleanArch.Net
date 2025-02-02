@@ -1,11 +1,15 @@
+using CleanArch.Net.Application.UseCases.Product;
+using CleanArch.Net.Application.UseCases.Product.Contracts;
+using CleanArch.Net.Domain.Contracts.Data;
 using CleanArch.Net.Infrastructure.Data.Contexts;
+using CleanArch.Net.Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArch.Net.Infrastructure.IoC.DependencyInjection;
 
-public static class InfraDataDi
+public static class InfraDataExtensionDi
 {
     public static void AddInfrastructure(this IServiceCollection self, string connection)
     {
@@ -15,7 +19,12 @@ public static class InfraDataDi
 
         self.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
+
+        self.AddScoped<IProductRepository, ProductRepository>();
     }
+
+    public static void AddUseCases(this IServiceCollection self)
+        => self.AddScoped<IProductUseCase, ProductUseCase>();
 
     public static async Task ApplyMigrations(this IServiceCollection self)
     {
