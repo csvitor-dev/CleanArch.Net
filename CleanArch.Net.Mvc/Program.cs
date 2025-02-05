@@ -1,3 +1,4 @@
+using CleanArch.Net.Application.Mappings.Extension;
 using CleanArch.Net.Infrastructure.Data;
 using CleanArch.Net.Infrastructure.IoC.DependencyInjection;
 
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddInfrastructure(InfraConfiguration.ConnectionString);
 builder.Services.AddUseCases();
+builder.Services.AddAutoMapperConfiguration();
+
 await builder.Services.ApplyMigrations();
 
 builder.Services.AddControllersWithViews();
