@@ -8,12 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true"/>
+        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\CleanArch.Net.Infrastructure.Data\CleanArch.Net.Infrastructure.Data.csproj" />
       <ProjectReference Include="..\CleanArch.Net.Infrastructure.IoC\CleanArch.Net.Infrastructure.IoC.csproj" />
+      <ProjectReference Include="..\CleanArch.Net.Application\CleanArch.Net.Application.csproj" />
     </ItemGroup>
 
 </Project>
