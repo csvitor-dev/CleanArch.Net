@@ -3,7 +3,7 @@ using CleanArch.Domain.Contracts.Data;
 
 namespace CleanArch.DAO.Services;
 
-internal class UnitOfWork
+public class UnitOfWork
     (AppDbContext context) : IUnitOfWork
 {
     public async Task CommitAsync(CancellationToken token)
