@@ -4,5 +4,5 @@ namespace CleanArch.Domain.Contracts.Data.Repositories;
 
 public interface IUserRepository : IBaseRepository<User>
 {
-    Task<User> GetByEmailAsync(string email, CancellationToken token);
+    Task<User?> GetByEmailAsync(string email, CancellationToken token);
 }
