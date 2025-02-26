@@ -1,5 +1,6 @@
 using CleanArch.IoC.Extensions;
 using CleanArch.Application.Extensions;
+using CleanArch.API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCorsPolicy();
+
 var app = builder.Build();
 
 var scope = app.Services.CreateScope();
@@ -24,6 +27,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.MapControllers();
 
