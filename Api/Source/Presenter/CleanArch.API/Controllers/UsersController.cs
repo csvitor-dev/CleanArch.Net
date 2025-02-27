@@ -1,4 +1,3 @@
-using System.Net;
 using CleanArch.Application.UseCases.User.Create;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

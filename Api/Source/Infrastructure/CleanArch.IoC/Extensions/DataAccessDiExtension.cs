@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using CleanArch.DAO.Contexts;
 using CleanArch.DAO.Repositories;
 using CleanArch.DAO.Services;
@@ -25,7 +24,9 @@ public static class DataAccessDiExtension
     public static async Task CreateDatabaseAsync(this IServiceScope self)
     {
         var context = self.ServiceProvider.GetService<AppDbContext>();
-
-        await context?.Database.EnsureCreatedAsync();
+        
+        if (context is null)
+            return;
+        await context.Database.EnsureCreatedAsync();
     }
 }
